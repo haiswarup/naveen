@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avinash Varma | Resume Gallery (21 Variants)</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --bg2: #eef3ff;
+      --card: rgba(255, 255, 255, 0.7);
+      --line: #dce4ff;
+      --ink: #111b47;
+      --muted: #4c5a90;
+      --primary: #4f46e5;
+      --primary2: #0ea5e9;
+      --success: #16a34a;
+      --shadow: 0 20px 40px rgba(28, 48, 120, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, #ffffff 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, #e8f0ff 0%, transparent 38%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .wrap { max-width: 1320px; margin: 0 auto; }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      min-height: 230px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(79,70,229,.16), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(14,165,233,.16), transparent 32%),
+        linear-gradient(120deg, rgba(255,255,255,.96), rgba(241,246,255,.95));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 24px 44px rgba(28, 48, 120, 0.14);
+      padding: 36px 34px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 0;
+      object-fit: contain;
+      background: transparent;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      justify-self: center;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #6f7fc1;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.2vw, 58px);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+      background: linear-gradient(90deg, #1b2a6e, #4f46e5 45%, #0ea5e9 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+    }
+
+    .hero-role {
+      color: #31458f;
+      font-size: clamp(20px, 2.1vw, 30px);
+      line-height: 1.2;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .hero-sub {
+      margin-top: -2px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #6071a9;
+      font-weight: 500;
+      text-align: center;
+      max-width: 760px;
+    }
+
+    .hero-meta-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 2px;
+      padding: 0;
+      max-width: 980px;
+    }
+
+    .hero-meta-list li {
+      font-size: 13px;
+      font-weight: 600;
+      color: #3f5194;
+      background: rgba(255,255,255,.66);
+      border: 1px solid #d3ddff;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+
+    .hero-meta-list a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero-meta-list a:hover {
+      text-decoration: underline;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 12px 0 16px;
+    }
+
+    .title-row h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #21327a;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #27408b;
+      background: #e7eeff;
+      border: 1px solid #cdd9ff;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(38, 68, 165, 0.1);
+      padding: 14px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,.4), transparent 45%, rgba(79,70,229,.05));
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #b9c9ff;
+      box-shadow: 0 18px 32px rgba(50, 81, 180, 0.16);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #1e2f77;
+      margin-bottom: 6px;
+      letter-spacing: .2px;
+    }
+
+    .preview-shell {
+      position: relative;
+      width: min(100%, 340px);
+      margin: 0 auto 12px;
+      border: 1px solid #ccdaff;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fafdff, #edf3ff);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+
+    .preview-canvas {
+      min-height: 420px;
+      overflow: hidden;
+      position: relative;
+      background: #f6f8ff;
+    }
+
+    .preview-canvas iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 794px;
+      height: 1123px;
+      transform-origin: top left;
+      border: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .preview-canvas iframe.loaded {
+      opacity: 1;
+    }
+
+    .preview-label {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #29428f;
+      background: rgba(255,255,255,.92);
+      border: 1px solid #c6d4ff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      z-index: 2;
+    }
+
+    .desc {
+      color: #5464a1;
+      font-size: 12px;
+      line-height: 1.5;
+      min-height: 38px;
+      margin-bottom: 10px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: all .2s ease;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-view {
+      background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(79,70,229,.22);
+    }
+    .btn-view:hover { filter: brightness(1.05); }
+
+    .btn-pdf {
+      background: #ffffff;
+      color: #0f245c;
+      border-color: #c8d5ff;
+    }
+    .btn-pdf:hover {
+      background: #eef3ff;
+      border-color: #aac0ff;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #6b79a8;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 14px; }
+      .hero {
+        text-align: center;
+        min-height: auto;
+        padding: 20px;
+        gap: 14px;
+      }
+      .hero-logo { margin: 0 auto; }
+      .hero-kicker { font-size: 10px; letter-spacing: 1.7px; }
+      .hero-role { font-size: 16px; }
+      .hero-sub { font-size: 12px; }
+      .hero-meta-list li { font-size: 11px; padding: 5px 10px; }
+      .title-row { flex-direction: column; align-items: flex-start; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <img src="./images/logo.png" alt="Avinash logo" class="hero-logo" />
+      <div class="hero-copy">
+       
+        <h1>DONGARI AVINASH VARMA </h1>
+        <p class="hero-role">Senior DevOps Engineer | Platform Engineering | SRE</p>
+        
+        <ul class="hero-meta-list">
+          <li>📍 Hyderabad, India</li>
+          <li>📞 +91-8099288251</li>
+          <li>✉️ aviwas2@gmail.com</li>
+          <li><a href="https://linkedin.com/in/avinash-varma" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+          <li><a href="https://github.com/avinashvarma" target="_blank" rel="noopener noreferrer">GitHub Portfolio</a></li>
+        </ul>
+      </div>
+    </header>
+
+
+
+    <section class="grid" aria-label="Resume gallery">
+      <article class="card"><h3>Resume 1 — Premium Glass</h3><p class="desc">Modern glassmorphism with balanced professional hierarchy and rich detail blocks.</p><div class="actions"><a class="btn btn-view" href="./resume1.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume1.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 2 — Elegant Split</h3><p class="desc">Contemporary split layout with clean sections and concise skill presentation.</p><div class="actions"><a class="btn btn-view" href="./resume2.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume2.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 3 — Strategic Grid</h3><p class="desc">Structured multi-block format emphasizing achievements and technology depth.</p><div class="actions"><a class="btn btn-view" href="./resume3.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume3.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 4 — Midnight Teal</h3><p class="desc">Dark navy with cyan highlights for a modern enterprise-ready profile style.</p><div class="actions"><a class="btn btn-view" href="./resume4.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume4.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 5 — Amber Sunrise</h3><p class="desc">Bright professional contrast with warm amber accents and executive clarity.</p><div class="actions"><a class="btn btn-view" href="./resume5.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume5.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 6 — Electric Slate</h3><p class="desc">High-energy slate theme with neon-lime cues and compact technical rhythm.</p><div class="actions"><a class="btn btn-view" href="./resume6.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume6.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 7 — Sage Garden</h3><p class="desc">Soft premium tones with polished card architecture and elegant readability.</p><div class="actions"><a class="btn btn-view" href="./resume7.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume7.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 8 — Rose Noir</h3><p class="desc">Deep burgundy luxury palette with rose highlights and strong executive vibe.</p><div class="actions"><a class="btn btn-view" href="./resume8.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume8.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 9 — Ivory Serif Classic</h3><p class="desc">Classic editorial styling with serif accents for timeless premium presentation.</p><div class="actions"><a class="btn btn-view" href="./resume9.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume9.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 10 — Arctic Frost</h3><p class="desc">Cool blue-white composition with clean metrics and crisp modern sections.</p><div class="actions"><a class="btn btn-view" href="./resume10.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume10.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 11 — Graphite Gold</h3><p class="desc">Luxury graphite base with gold accents for impactful senior profile branding.</p><div class="actions"><a class="btn btn-view" href="./resume11.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume11.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 12 — Terracotta Warm</h3><p class="desc">Warm terracotta visuals with approachable, high-clarity content organization.</p><div class="actions"><a class="btn btn-view" href="./resume12.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume12.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 13 — Ocean Teal</h3><p class="desc">Deep ocean palette with energetic teal accents and modern skill grouping.</p><div class="actions"><a class="btn btn-view" href="./resume13.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume13.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 14 — Deep Violet Noir</h3><p class="desc">Dark violet premium style with glow accents and rich two-page structure.</p><div class="actions"><a class="btn btn-view" href="./resume14.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume14.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 15 — Carbon Steel</h3><p class="desc">Industrial carbon look with steel blue detailing and a confident layout.</p><div class="actions"><a class="btn btn-view" href="./resume15.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume15.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 16 — Dark Forest</h3><p class="desc">Emerald-dark theme inspired by nature, blending clarity with modern depth.</p><div class="actions"><a class="btn btn-view" href="./resume16.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume16.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 17 — Copper Dark</h3><p class="desc">Metallic copper aesthetics over charcoal for premium tech-lead positioning.</p><div class="actions"><a class="btn btn-view" href="./resume17.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume17.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 18 — Neon Crimson</h3><p class="desc">Bold crimson cyber style with dynamic highlights and high-contrast panels.</p><div class="actions"><a class="btn btn-view" href="./resume18.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume18.html')">Download PDF</button></div></article>
+
+      <article class="card"><h3>Resume 19 — Obsidian Silver</h3><p class="desc">Minimal luxury dark format with subtle silver cues and disciplined spacing.</p><div class="actions"><a class="btn btn-view" href="./resume19.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume19.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume 20 — Aurora Dark</h3><p class="desc">Space-inspired dark design featuring aurora gradients and sleek components.</p><div class="actions"><a class="btn btn-view" href="./resume20.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume20.html')">Download PDF</button></div></article>
+      <article class="card"><h3>Resume ATS — Optimized</h3><p class="desc">ATS-safe single-column resume focused on parser-friendly semantic structure.</p><div class="actions"><a class="btn btn-view" href="./resume-ats.html" target="_blank">View Resume</a><button class="btn btn-pdf" onclick="downloadPdf('./resume-ats.html')">Download PDF</button></div></article>
+    </section>
+
+    
+  </div>
+
+  <script>
+    const PREVIEW_PAGE_WIDTH = 794;
+    const PREVIEW_PAGE_HEIGHT = 1123;
+    const PREVIEW_VISIBLE_RATIO = 1;
+
+    function resizePreviews() {
+      const canvases = document.querySelectorAll('.preview-canvas');
+      canvases.forEach((canvas) => {
+        const frame = canvas.querySelector('iframe');
+        if (!frame) return;
+
+        const canvasWidth = canvas.clientWidth;
+        if (!canvasWidth) return;
+
+        const scale = canvasWidth / PREVIEW_PAGE_WIDTH;
+        const visibleHeight = PREVIEW_PAGE_HEIGHT * scale * PREVIEW_VISIBLE_RATIO;
+        const boundedHeight = Math.max(420, Math.min(620, Math.round(visibleHeight)));
+
+        frame.style.transform = `scale(${scale})`;
+        canvas.style.height = `${boundedHeight}px`;
+      });
+    }
+
+    function injectPreviews() {
+      const cards = document.querySelectorAll('.grid .card');
+      cards.forEach((card, index) => {
+        const viewLink = card.querySelector('.btn-view');
+        if (!viewLink || card.querySelector('.preview-shell')) return;
+
+        const href = viewLink.getAttribute('href');
+        const heading = card.querySelector('h3');
+        if (!href || !heading) return;
+
+        const shell = document.createElement('div');
+        shell.className = 'preview-shell';
+
+        const canvas = document.createElement('div');
+        canvas.className = 'preview-canvas';
+
+        const frame = document.createElement('iframe');
+        frame.loading = 'lazy';
+        frame.src = href;
+        frame.title = `Preview ${index + 1}`;
+        frame.addEventListener('load', () => frame.classList.add('loaded'));
+
+        const label = document.createElement('div');
+        label.className = 'preview-label';
+        label.textContent = 'Live Preview';
+
+        canvas.appendChild(frame);
+        shell.appendChild(canvas);
+        shell.appendChild(label);
+
+        card.insertBefore(shell, heading);
+      });
+
+      resizePreviews();
+    }
+
+    function downloadPdf(path) {
+      const fileName = path.split('/').pop().replace('.html', '.pdf');
+      const pdfPath = `./pdf_clean/${fileName}`;
+
+      const a = document.createElement('a');
+      a.href = pdfPath;
+      a.download = fileName;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
+    injectPreviews();
+    window.addEventListener('resize', resizePreviews);
+  </script>
+</body>
+</html>

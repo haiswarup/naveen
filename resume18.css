@@ -1,0 +1,154 @@
+/* =====================================================
+   RESUME 18 — NEON CRIMSON
+   Black-red cyber aesthetic · neon crimson (#ff1744)
+   High contrast glow edges · Poppins only
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --nc-bg:      #0a0506;
+  --nc-panel:   #13090b;
+  --nc-card:    #1d0c10;
+  --nc-ink:     #ffe5ea;
+  --nc-muted:   #c38b98;
+  --nc-red:     #ff1744;
+  --nc-red2:    #ff5c7a;
+  --nc-light:   #ffb6c5;
+  --nc-border:  #4f1422;
+  --nc-glow:    rgba(255,23,68,.22);
+}
+
+@page { size: A4 portrait; margin: 10mm; }
+@media print {
+  body { background: var(--nc-bg) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .resume-book { box-shadow: none; }
+  .rpage { page-break-after: always; box-shadow: none; }
+  .rpage:last-child { page-break-after: avoid; }
+}
+
+body { font-family: 'Poppins', sans-serif; background: #050203; color: var(--nc-ink); }
+.resume-book { max-width: 900px; margin: 20px auto; }
+.rpage {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  box-shadow: 0 0 40px rgba(255,23,68,.08), 0 10px 28px rgba(0,0,0,.7);
+  margin-bottom: 24px;
+  page-break-after: always;
+}
+.rpage:last-child { page-break-after: avoid; }
+
+/* ── HERO ── */
+.r18-hero {
+  display: grid;
+  grid-template-columns: 108px 1fr 195px;
+  gap: 0;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #14080b 0%, #230a12 52%, #120709 100%);
+  border-bottom: 2px solid var(--nc-red);
+  position: relative;
+}
+.r18-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(255,23,68,.08);
+}
+.r18-photo {
+  width: 86px; height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--nc-red);
+  box-shadow: 0 0 24px var(--nc-glow);
+  align-self: center;
+}
+.r18-copy { padding: 0 16px; align-self: center; }
+.r18-copy h1 {
+  font-size: 24px; font-weight: 800;
+  color: #fff; line-height: 1.1; margin-bottom: 5px;
+  text-shadow: 0 0 18px rgba(255,23,68,.35);
+}
+.r18-role { font-size: 10px; font-weight: 600; color: var(--nc-red2); letter-spacing: 1.2px; margin-bottom: 6px; }
+.r18-exp {
+  display: inline-block; font-size: 8.5px; font-weight: 700;
+  background: var(--nc-red); color: #2b000a;
+  padding: 2px 10px; border-radius: 3px; letter-spacing: .5px; margin-bottom: 8px;
+}
+.r18-summary { font-size: 9.5px; line-height: 1.65; color: var(--nc-muted); }
+.r18-contact { align-self: center; font-size: 9.5px; }
+.r18-cr { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.r18-ci { width: 16px; text-align: center; color: var(--nc-red2); font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.r18-contact a { color: var(--nc-light); text-decoration: none; }
+.r18-contact a:hover { text-decoration: underline; }
+
+/* ── GRID ── */
+.r18-grid { display: grid; grid-template-columns: 242px 1fr; }
+
+/* ── LEFT ── */
+.r18-left {
+  background: #12070a;
+  border-right: 1px solid var(--nc-border);
+  padding: 22px 16px; display: flex; flex-direction: column; gap: 18px;
+}
+.r18-sh {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--nc-red2); margin-bottom: 8px; padding-bottom: 5px;
+  border-bottom: 1px solid var(--nc-red);
+}
+.r18-tags { display: flex; flex-wrap: wrap; gap: 5px; list-style: none; }
+.r18-tags li {
+  font-size: 9px; padding: 3px 7px;
+  background: var(--nc-card); border: 1px solid var(--nc-border); border-radius: 3px; color: var(--nc-light);
+}
+.r18-plist { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.r18-plist li { font-size: 9.5px; line-height: 1.55; color: var(--nc-ink); padding-left: 12px; position: relative; }
+.r18-plist li::before { content: "▸"; position: absolute; left: 0; color: var(--nc-red); }
+
+/* ── RIGHT ── */
+.r18-right { padding: 22px 22px; display: flex; flex-direction: column; gap: 18px; }
+.r18-sh-r {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--nc-red2); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid var(--nc-red);
+}
+.r18-hlist { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.r18-hlist li { font-size: 9.5px; line-height: 1.55; display: flex; gap: 7px; color: var(--nc-ink); }
+.r18-hlist .ico { flex-shrink: 0; }
+.r18-dgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.r18-dc {
+  background: var(--nc-card); border: 1px solid var(--nc-border);
+  border-left: 2px solid var(--nc-red); border-radius: 4px; padding: 8px 10px;
+}
+.r18-dc h4 { font-size: 9px; font-weight: 700; color: var(--nc-red2); margin-bottom: 3px; text-transform: uppercase; }
+.r18-dc p { font-size: 8.5px; color: var(--nc-muted); line-height: 1.55; }
+.r18-tl { display: flex; flex-direction: column; gap: 6px; }
+.r18-tr {
+  padding: 7px 10px; background: var(--nc-card);
+  border: 1px solid var(--nc-border); border-left: 2px solid var(--nc-red); border-radius: 4px;
+}
+.r18-tyr { font-size: 8.5px; font-weight: 700; color: var(--nc-red2); display: block; margin-bottom: 1px; }
+.r18-trole { font-size: 9.5px; color: var(--nc-ink); }
+
+/* ── PAGE 2 ── */
+.r18-p2top {
+  background: linear-gradient(135deg, #14080b 0%, #230a12 100%);
+  border-bottom: 2px solid var(--nc-red); padding: 14px 28px;
+}
+.r18-p2top h2 { font-size: 19px; font-weight: 800; color: #fff; }
+.r18-p2top p { font-size: 10px; color: var(--nc-muted); margin-top: 3px; }
+.r18-roles { padding: 16px 28px; display: flex; flex-direction: column; gap: 13px; }
+.r18-card {
+  background: var(--nc-card); border: 1px solid var(--nc-border);
+  border-left: 3px solid var(--nc-red);
+  border-radius: 5px; padding: 11px 14px;
+  box-shadow: 0 2px 14px var(--nc-glow);
+}
+.r18-ch { display: flex; align-items: center; gap: 12px; margin-bottom: 7px; }
+.r18-ch .co-logo { width: 30px; height: 30px; object-fit: contain; border-radius: 4px; flex-shrink: 0; background: rgba(255,255,255,.06); padding: 3px; }
+.r18-ch h3 { font-size: 11.5px; font-weight: 700; color: var(--nc-ink); }
+.r18-ch .tn { font-size: 9px; color: var(--nc-muted); display: block; margin-top: 1px; }
+.r18-badges { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; margin-bottom: 7px; }
+.r18-badges li { font-size: 8px; padding: 2px 7px; background: #2a0b13; border: 1px solid var(--nc-red); border-radius: 999px; color: var(--nc-light); font-weight: 600; }
+.r18-pts { padding-left: 14px; display: flex; flex-direction: column; gap: 3px; }
+.r18-pts li { font-size: 9.5px; line-height: 1.5; color: var(--nc-ink); }

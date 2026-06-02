@@ -1,0 +1,152 @@
+/* =====================================================
+   RESUME 19 — OBSIDIAN SILVER
+   Minimal luxury dark · silver-blue accents · low-glow
+   Clean typography · thin separators · Poppins only
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --os-bg:      #07070d;
+  --os-panel:   #0c0c14;
+  --os-card:    #11111c;
+  --os-ink:     #e9ecf5;
+  --os-muted:   #9aa4bd;
+  --os-silver:  #8d98b2;
+  --os-silver2: #b5bfd4;
+  --os-line:    #2a3044;
+}
+
+@page { size: A4 portrait; margin: 10mm; }
+@media print {
+  body { background: var(--os-bg) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .resume-book { box-shadow: none; }
+  .rpage { page-break-after: always; box-shadow: none; }
+  .rpage:last-child { page-break-after: avoid; }
+}
+
+body { font-family: 'Poppins', sans-serif; background: #05050a; color: var(--os-ink); }
+.resume-book { max-width: 900px; margin: 20px auto; }
+.rpage {
+  background: var(--os-panel);
+  border: 1px solid var(--os-line);
+  box-shadow: 0 8px 26px rgba(0,0,0,.68);
+  margin-bottom: 24px;
+  page-break-after: always;
+}
+.rpage:last-child { page-break-after: avoid; }
+
+/* ── HERO ── */
+.r19-hero {
+  display: grid;
+  grid-template-columns: 98px 1fr 205px;
+  gap: 0;
+  padding: 24px 28px 22px;
+  border-bottom: 1px solid var(--os-line);
+  background: linear-gradient(180deg, #0f101a 0%, #0c0c14 100%);
+}
+.r19-photo {
+  width: 78px; height: 78px; border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--os-silver);
+  align-self: center;
+}
+.r19-copy { padding: 0 16px; align-self: center; }
+.r19-copy h1 { font-size: 23px; font-weight: 700; letter-spacing: .4px; color: #fff; line-height: 1.15; margin-bottom: 5px; }
+.r19-role { font-size: 10px; font-weight: 500; color: var(--os-silver2); letter-spacing: 1px; margin-bottom: 7px; }
+.r19-exp {
+  display: inline-block; font-size: 8.3px; font-weight: 600;
+  color: var(--os-silver2); border: 1px solid var(--os-silver);
+  padding: 2px 8px; border-radius: 2px; letter-spacing: .5px; margin-bottom: 8px;
+}
+.r19-summary { font-size: 9.4px; line-height: 1.64; color: var(--os-muted); max-width: 98%; }
+.r19-contact { align-self: center; font-size: 9.4px; }
+.r19-cr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.r19-ci { width: 15px; text-align: center; color: var(--os-silver2); font-size: 10px; font-weight: 700; flex-shrink: 0; }
+.r19-contact a { color: var(--os-ink); text-decoration: none; }
+.r19-contact a:hover { text-decoration: underline; }
+
+/* ── METRICS ── */
+.r19-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--os-line);
+  border-bottom: 1px solid var(--os-line);
+}
+.r19-mc { padding: 10px 12px; border-right: 1px solid var(--os-line); text-align: center; }
+.r19-mc:last-child { border-right: none; }
+.r19-mcn { font-size: 20px; font-weight: 700; color: var(--os-silver2); line-height: 1; }
+.r19-mcl { font-size: 8.2px; color: var(--os-muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .6px; }
+
+/* ── GRID ── */
+.r19-grid { display: grid; grid-template-columns: 236px 1fr; }
+
+.r19-left {
+  border-right: 1px solid var(--os-line);
+  padding: 20px 16px; display: flex; flex-direction: column; gap: 16px;
+}
+.r19-right { padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; }
+
+.r19-sh, .r19-sh-r {
+  font-size: 8.7px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.45px;
+  color: var(--os-silver2); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid var(--os-line);
+}
+
+.r19-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 5px; }
+.r19-tags li {
+  font-size: 8.6px; color: var(--os-ink);
+  padding: 3px 7px; border: 1px solid var(--os-line); border-radius: 2px; background: var(--os-card);
+}
+.r19-plist { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.r19-plist li { font-size: 9.2px; line-height: 1.52; color: var(--os-ink); padding-left: 10px; position: relative; }
+.r19-plist li::before { content: '•'; position: absolute; left: 0; color: var(--os-silver2); }
+
+.r19-hlist { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.r19-hlist li { font-size: 9.2px; line-height: 1.53; color: var(--os-ink); }
+
+.r19-dgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.r19-dc {
+  border: 1px solid var(--os-line);
+  background: var(--os-card);
+  padding: 7px 9px;
+}
+.r19-dc h4 { font-size: 8.8px; font-weight: 700; color: var(--os-silver2); margin-bottom: 3px; text-transform: uppercase; }
+.r19-dc p { font-size: 8.4px; color: var(--os-muted); line-height: 1.5; }
+
+.r19-tl { display: flex; flex-direction: column; gap: 5px; }
+.r19-tr {
+  border: 1px solid var(--os-line);
+  background: var(--os-card);
+  padding: 6px 9px;
+}
+.r19-tyr { display: block; font-size: 8.3px; color: var(--os-silver2); font-weight: 700; margin-bottom: 1px; }
+.r19-trole { font-size: 9.2px; color: var(--os-ink); }
+
+/* ── PAGE 2 ── */
+.r19-p2top {
+  padding: 13px 28px;
+  border-bottom: 1px solid var(--os-line);
+  background: #0f101a;
+}
+.r19-p2top h2 { font-size: 18px; font-weight: 700; color: #fff; }
+.r19-p2top p { font-size: 9.6px; color: var(--os-muted); margin-top: 2px; }
+.r19-roles { padding: 15px 28px; display: flex; flex-direction: column; gap: 11px; }
+.r19-card {
+  border: 1px solid var(--os-line);
+  background: var(--os-card);
+  padding: 10px 12px;
+}
+.r19-ch { display: flex; align-items: center; gap: 11px; margin-bottom: 6px; }
+.r19-ch .co-logo {
+  width: 28px; height: 28px; object-fit: contain; flex-shrink: 0;
+  border: 1px solid var(--os-line); border-radius: 3px; background: rgba(255,255,255,.02); padding: 3px;
+}
+.r19-ch h3 { font-size: 11px; font-weight: 700; color: var(--os-ink); }
+.r19-ch .tn { font-size: 8.8px; color: var(--os-muted); display: block; margin-top: 1px; }
+.r19-badges { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.r19-badges li {
+  font-size: 7.9px; color: var(--os-silver2);
+  border: 1px solid var(--os-line); border-radius: 2px; padding: 2px 6px; background: #141726;
+}
+.r19-pts { padding-left: 14px; display: flex; flex-direction: column; gap: 3px; }
+.r19-pts li { font-size: 9.2px; line-height: 1.48; color: var(--os-ink); }

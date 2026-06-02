@@ -1,0 +1,251 @@
+/* ============================================================
+   resume4.css — MIDNIGHT TEAL
+   Dark navy / cyan — glowing borders, metrics strip, 2-column
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:    #0d1b2a;
+  --bg2:   #1b2d42;
+  --bg3:   #1e3048;
+  --cyan:  #00b4d8;
+  --cyan2: #90e0ef;
+  --cdim:  rgba(0,180,216,.13);
+  --white: #ffffff;
+  --text:  #cdd6e0;
+  --muted: #8a9bb0;
+  --card:  #162030;
+  --bdr:   rgba(0,180,216,.22);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #090f16;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+a { color: var(--cyan2); text-decoration: none; }
+ul { list-style: none; }
+
+.resume-book { max-width: 900px; margin: 0 auto; }
+
+.rpage {
+  background: var(--bg);
+  margin-bottom: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+/* ---- HERO ---- */
+.r4-hero {
+  background: linear-gradient(135deg, #0d1b2a 0%, #0f3460 60%, #16213e 100%);
+  padding: 34px 40px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  border-bottom: 2px solid var(--cyan);
+  position: relative;
+  overflow: hidden;
+}
+.r4-hero::before {
+  content: '';
+  position: absolute; top: -70px; right: -70px;
+  width: 250px; height: 250px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,180,216,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.r4-hero::after {
+  content: '';
+  position: absolute; bottom: -40px; left: 35%;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,180,216,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.r4-photo {
+  width: 88px; height: 88px; border-radius: 50%;
+  border: 3px solid var(--cyan);
+  object-fit: cover; flex-shrink: 0;
+  box-shadow: 0 0 0 6px rgba(0,180,216,.1), 0 4px 20px rgba(0,0,0,.4);
+}
+
+.r4-copy { flex: 1; }
+.r4-copy h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px; font-weight: 900;
+  color: var(--white); letter-spacing: .06em; margin-bottom: 3px;
+}
+.r4-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px; font-weight: 500;
+  color: var(--cyan); letter-spacing: .09em; margin-bottom: 5px;
+}
+.r4-exp {
+  display: inline-block;
+  background: var(--cdim); border: 1px solid rgba(0,180,216,.45);
+  color: var(--cyan2); font-size: 10px; font-weight: 700;
+  letter-spacing: .12em; padding: 2px 10px; border-radius: 20px;
+  margin-bottom: 10px; text-transform: uppercase;
+}
+.r4-summary {
+  font-size: 11.5px; color: var(--muted);
+  max-width: 460px; line-height: 1.8;
+}
+
+.r4-contact {
+  flex-shrink: 0; min-width: 195px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.cr { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--text); }
+.ci {
+  width: 22px; height: 22px;
+  background: var(--cdim); border: 1px solid var(--bdr); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; flex-shrink: 0; color: var(--cyan);
+}
+
+/* ---- METRICS STRIP ---- */
+.r4-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--bg2); border-bottom: 1px solid var(--bdr);
+}
+.r4-mc {
+  padding: 13px 16px; text-align: center;
+  border-right: 1px solid var(--bdr);
+}
+.r4-mc:last-child { border-right: none; }
+.r4-mcn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px; font-weight: 900; color: var(--cyan);
+  display: block; line-height: 1.1;
+}
+.r4-mcl {
+  font-size: 9.5px; font-weight: 500; color: var(--muted);
+  letter-spacing: .06em; text-transform: uppercase;
+  display: block; margin-top: 2px;
+}
+
+/* ---- 2-COLUMN GRID ---- */
+.r4-grid { display: grid; grid-template-columns: 258px 1fr; }
+
+.r4-left {
+  background: var(--bg3); padding: 22px 18px;
+  border-right: 1px solid var(--bdr);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.r4-right {
+  padding: 22px 26px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+
+/* ---- SECTION HEADING ---- */
+.r4-sh {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--cyan);
+  border-bottom: 1px solid var(--bdr); padding-bottom: 5px; margin-bottom: 9px;
+}
+
+/* ---- SKILL PILLS ---- */
+.r4-skills { display: flex; flex-wrap: wrap; gap: 5px; }
+.r4-skills li {
+  background: var(--cdim); border: 1px solid var(--bdr);
+  color: var(--cyan2); font-size: 10px; font-weight: 500;
+  padding: 3px 8px; border-radius: 3px; letter-spacing: .02em;
+}
+
+/* ---- PLAIN LIST ---- */
+.r4-plist { display: flex; flex-direction: column; gap: 5px; }
+.r4-plist li {
+  font-size: 11.5px; color: var(--text);
+  padding-left: 13px; position: relative; line-height: 1.6;
+}
+.r4-plist li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--cyan); font-size: 9px; top: 2px;
+}
+
+/* ---- PROFILE HIGHLIGHTS ---- */
+.r4-hlist { display: flex; flex-direction: column; gap: 8px; }
+.r4-hlist li { display: flex; gap: 10px; font-size: 12px; color: var(--text); line-height: 1.65; }
+.r4-hlist li .ico { color: var(--cyan); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+/* ---- TECH DOMAIN GRID ---- */
+.r4-dgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.r4-dc {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-left: 3px solid var(--cyan); padding: 9px 11px; border-radius: 4px;
+}
+.r4-dc h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9.5px; font-weight: 700; color: var(--cyan);
+  margin-bottom: 4px; text-transform: uppercase; letter-spacing: .07em;
+}
+.r4-dc p { font-size: 11px; color: var(--muted); line-height: 1.55; }
+
+/* ---- MINI TIMELINE ---- */
+.r4-tl { display: flex; flex-direction: column; }
+.r4-tr {
+  display: grid; grid-template-columns: 112px 1fr; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid rgba(0,180,216,.1);
+}
+.r4-tr:last-child { border-bottom: none; }
+.r4-tyr { font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 600; color: var(--cyan); }
+.r4-trole { font-size: 11.5px; color: var(--text); line-height: 1.5; }
+
+/* ---- PAGE 2 HEADER ---- */
+.r4-p2top {
+  background: linear-gradient(135deg, #0d1b2a 0%, #0f3460 100%);
+  padding: 22px 40px; border-bottom: 2px solid var(--cyan);
+}
+.r4-p2top h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: .06em;
+}
+.r4-p2top p { font-size: 11px; color: var(--cyan); margin-top: 3px; font-weight: 500; }
+
+/* ---- ROLE CARDS ---- */
+.r4-roles { padding: 22px 40px; display: flex; flex-direction: column; gap: 16px; }
+
+.r4-card {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-left: 4px solid var(--cyan); border-radius: 5px; padding: 16px 18px;
+}
+.r4-ch { display: flex; align-items: center; gap: 13px; margin-bottom: 8px; }
+.co-logo {
+  width: 36px; height: 36px; object-fit: contain; border-radius: 3px;
+  background: rgba(255,255,255,.05); padding: 4px; flex-shrink: 0;
+}
+.r4-ch h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--white);
+  margin-bottom: 2px; line-height: 1.3;
+}
+.r4-ch .tn { font-size: 10.5px; color: var(--cyan); font-weight: 500; }
+
+.r4-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+.r4-badges li {
+  background: var(--cdim); border: 1px solid var(--bdr);
+  color: var(--cyan2); font-size: 9.5px; font-weight: 500; padding: 2px 7px; border-radius: 3px;
+}
+
+.r4-pts { display: flex; flex-direction: column; gap: 5px; }
+.r4-pts li {
+  font-size: 11.5px; color: var(--text);
+  padding-left: 14px; position: relative; line-height: 1.65;
+}
+.r4-pts li::before {
+  content: '›'; position: absolute; left: 0;
+  color: var(--cyan); font-size: 17px; top: -3px;
+}
+
+/* ---- PRINT ---- */
+@media print {
+  @page { size: A4 portrait; margin: 10mm; }
+  body { background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rpage { margin-bottom: 0; box-shadow: none; page-break-after: always; }
+  .rpage:last-child { page-break-after: avoid; }
+}
